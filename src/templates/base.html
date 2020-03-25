@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+    <style type="text/css"></style>
+
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <a href="" id="icono" class="icono"><Strong style="margin-left: 15px;">Menú</Strong></a>
+            <div class="enlaces uno" id="enlaces">
+                <a style="text-decoration: none; color: #fff;" href="">Inicio</a>
+                <a style="text-decoration: none; color: #fff;" href="">Sobre Nosotros</a>
+                <a style="text-decoration: none; color: #fff;" href="">Contacto</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="textos">
+                <h1 href="">Author - Jorge Armisén</h1>
+                <h4 href="">Company : Softtek </h4>
+                <a href="{% url 'info' %}">Contacto</a>
+            </div>
+        </div>
+        <img src="" alt="">
+    </header>
+    <div class="wave">
+        <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+<main role="main" class="container-fluid">
+ 
+</main>
+</html>

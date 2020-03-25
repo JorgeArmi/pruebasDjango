@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+<div id="titulo">
+    <p class='lead text-align-center'><h3 class='text-align-center'>
+        <strong>{{ titulo }}</strong> <i class="fas fa-hands-helping"></i></h3>
+    </p> 
+</div>
+<div>
+
+    {% if not user.is_authenticated %}
+    <div class='col-sm-4 offset-sm-4'>
+        <form method="POST" action="">{% csrf_token %} 
+            {{ el_form|crispy }}
+
+            <!---{% if not request.user.is_register %}--->
+            <p>Si ya eres usuario,accede  <a href="{% url 'auth_login' %}">mediante este enlace.</a></p>
+            <a class='btn btn-primary offset-sm-4' href="{% url 'registration_register' %}">Registrarme</a> 
+            <!--{% endif %}-->
+        </form>
+    </div>
+
+    <!--{% else %}
+    <div class="card-deck row" style="padding-right: 10%; padding-left: 10%">
+        <div class="card col-lg-6 col-sm-12 offset-md-2">
+            <img src="{% static 'css/img/perfil.jpg' %}" class="card-img-top" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-align-center">Perfil de Usuario</h5>
+                <p class="card-text">Para poder editar los datos que se corresponden a tu perfil, por favor accede haciendo click en el siguiente botón.</p>
+                <a href="#Profile" class="btn btn-primary">Editar Perfil</a>
+            </div>              
+        </div>
+        <div class="card col-lg-6 col-sm-12 offset-md-2">
+            <img src="{% static 'css/img/acceso.jpg' %}" class="card-img-top" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-align-center">Accesos</h5>
+                <p class="card-text">Para poder ver los accesos permitidos para este usuario, por favor acceda haciendo click en el siguiente botón.</p>
+                <a href="#" class="btn btn-primary">Ver Accesos</a>
+            </div>
+        </div>      
+    </div>
+    {% endif %}-->
+</div>  
+
+{% endblock %}
