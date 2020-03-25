@@ -43,10 +43,11 @@ def category(request):
 
 def info(ListView):
 	template_name = "info.html"
-	nombres = ["Pepe","Pablo","Santiago","David"]
+	model = Usuarios()
+	nombres = Usuarios.objects.all()
 	context_object_name = "nombres"
 
-	return HttpResponse(nombres)
+	return HttpResponse(nombres,"info.html")
 
 def prueba(ListView):
 	template_name = "info.html"
