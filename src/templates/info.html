@@ -1,19 +1,21 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
-
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
 </head>
 <body>
-	<h1>Usuarios Registrados</h1>
-	{% for a in Usuarios %}
-		<h3>{{a.nombres}}</h3>
-		
+{% block content %}
+	<h2>Usuarios Registrados en nuestra BBDD</h2>
+
+	{% for instance in queryset %}
+		<p><strong>{{instance}}</strong></p>
+			<br>
 	{% endfor %}
-	<!---<table border="2">
+{% endblock %}
+	<table border="1">
 		<thead>
 			<th>Nombres</th>
 			<th>Contraseña</th>
@@ -22,18 +24,18 @@
 			<th>Tiemstamp</th>
 		</thead>
 		<tbody>
-			{% for a in usuarios %}
+			{% for instace in queryset %}
 				<tr>
-					<td>{{a.nombre}}</td>
-					<td>{{a.contraseña}}</td>
-					<td>{{a.primer_apellido}}</td>
-					<td>{{a.email}}</td>
-					<td>{{a.timestamp}}</td>-->
-					<!--<td><a href="">ver perfil</a></td>-->
-				<!--</tr>
-			{% endfor %}-->
-		<!---</tbody>
-	</table>-->
+					<td>{{instace.nombre}}</td>
+					<td>{{instace.contraseña}}</td>
+					<td>{{instace.primer_apellido}}</td>
+					<td>{{instace.email}}</td>
+					<td>{{instace.timestamp}}</td>
+					<td><a href="">ver perfil</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 </body>
 <main>
 	
