@@ -1,0 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+	background-image: url("{% static 'css/img/mountains.jpg' %}")
+	background-size: 100% ;
+    background-position: center;
+}
+	
