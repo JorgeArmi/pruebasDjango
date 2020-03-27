@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     #Apps propias del proyecto.
     'Usuarios'
+    'data_jars'
 ]
 
 MIDDLEWARE = [

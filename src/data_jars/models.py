@@ -9,6 +9,7 @@ class Data(models.Model):
 	jar = models.CharField(max_length=100, blank=False, null= False, verbose_name="Jar")
 	first_route = models.CharField(max_length=100, blank=False, null= False, verbose_name="RUTA 1",choices=RUTA_UNO)
 	second_route = models.CharField(max_length=100, blank=True, null= True, verbose_name="RUTA 2", choices=RUTA_DOS)
+	timestamp = models.DateField()
 
 	def get_default_routes(self):
 		return self.first_route + "" + self.second_route

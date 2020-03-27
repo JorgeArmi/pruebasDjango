@@ -29,4 +29,4 @@ class AdminPerfil(admin.ModelAdmin):
 	list_filter = ["id","telefono", "proyecto"]
 
 admin.site.register(Usuarios, AdminUsuarios) 
-admin.site.register(Perfil)
+admin.site.register(Perfil, AdminPerfil)
