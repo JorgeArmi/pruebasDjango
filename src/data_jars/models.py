@@ -15,7 +15,7 @@ class Data(models.Model):
 		return self.first_route + "" + self.second_route
 
 	def __str__(self):
-		return jar
+		return self.jar
 
 class Uuaa(models.Model):
 
@@ -23,6 +23,7 @@ class Uuaa(models.Model):
 	uuaa = models.MultipleChoiceField(max_length=10, blank=False, null=False, verbose_name="UUAA", choices=UNIDADES_APLICATIVAS)
 	tecnologia = models.CharField(max_length=50, blank=True, null=False)
 	data = models.ManyToManyFields(Data)
+	data = models.ForeignKey(Data, on_delete = models.CASCADE)
 
 	ear = models.CharField(max_length=100, blank=False, null= False)
 	war = models.CharField(max_length=100, blank=False, null= False)
@@ -31,4 +32,4 @@ class Uuaa(models.Model):
 		return self.ear + "" + self.war
 
 	def __str__(self):
-		return uuaa
+		return self.uuaa

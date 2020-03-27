@@ -11,13 +11,13 @@ class AdminData(admin.ModelAdmin):
 	search_fields = ["id","jar"]
 	ordering = ["id","jar"]
 
-class AdminUuaa(admin.ModelAdmin):
+#class AdminUuaa(admin.ModelAdmin):
 
-	list_display = ["id","uuaa","tecnologia","ear", "war"]
-	list_editable = ["tecnologia"]
-	list_filter = ["id","uuaa","ear","war"]
-	search_fields = ["id","uuaa"]
-	ordering = ["id","uuaa"]
+	#list_display = ["id","uuaa","tecnologia","ear", "war"]
+	#list_editable = ["tecnologia"]
+	#list_filter = ["id","uuaa","ear","war"]
+	#search_fields = ["id","uuaa"]
+	#ordering = ["id","uuaa"]
 
 admin.site.register(Data, AdminData)
-admin.site.register(Uuaa, AdminUuaa)
+admin.site.register(Uuaa) #,AdminUuaa)
