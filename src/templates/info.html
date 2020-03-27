@@ -1,44 +1,53 @@
 {% load crispy_forms_tags %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-compatible" content="ie=edge">
-</head>
-<body>
-{% block content %}
-	<h2>Usuarios Registrados en nuestra BBDD</h2>
-
-	{% for instance in queryset %}
-		<p><strong>{{instance}}</strong></p>
-			<br>
-	{% endfor %}
-{% endblock %}
-	<table border="1">
-		<thead>
-			<th>Nombres</th>
-			<th>Contraseña</th>
-			<th>Primer apellido</th>
-			<th>Email</th>
-			<th>Tiemstamp</th>
-		</thead>
-		<tbody>
-			{% for instace in queryset %}
-				<tr>
-					<td>{{instace.nombre}}</td>
-					<td>{{instace.contraseña}}</td>
-					<td>{{instace.primer_apellido}}</td>
-					<td>{{instace.email}}</td>
-					<td>{{instace.timestamp}}</td>
-					<td><a href="">ver perfil</a></td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-</body>
-<main>
-	
-</main>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-compatible" content="ie=edge">
+	    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+	    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	    <link rel="stylesheet" href="{% static 'css/estilo_info.css' %}">
+	</head>
+	<header>
+		{% include 'navbar.html' %}
+	</header>
+	<div class="container">
+		
+	</div>
+	<script src=""></script>
+	<body>
+	{% block content %}
+	<div class="contenedortabla" style="text-align: center;">
+		<h2>Usuarios Registrados en nuestra BBDD</h2>
+		<table border="1" style="text-align: center;margin-left: 300px;">
+			<thead>
+				<th>Nombres</th>
+				<th>Contraseña</th>
+				<th>Primer apellido</th>
+				<th>Email</th>
+				<th>Tiemstamp</th>
+			</thead>
+			<tbody>
+				{% for instace in queryset %}
+					<tr>
+						<td>{{instace.nombre}}</td>
+						<td>{{instace.contraseña}}</td>
+						<td>{{instace.primer_apellido}}</td>
+						<td>{{instace.email}}</td>
+						<td>{{instace.timestamp}}</td>
+						<td><a href="">ver perfil</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>	
+	{% endblock %}	
+	</body>
+	<main>
+		
+	</main>
 </html>
 	

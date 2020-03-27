@@ -21,13 +21,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from Usuarios import views
-from Usuarios.views import category#about, repositorios, uuaas, profile
+from Usuarios.views import category
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('contact/', views.contact, name='contact'),
     path('', views.inicio, name='inicio'), 
-    path('info/', views.prueba, name='info'), 
+    path('info/', views.category, name='info'), 
     #path('repositorios/', repositorios, name='repositorios'), 
     #path('uuaas/', uuaas, name='uuaas'), 
     #path('profile/', profile, name='profile'), 
