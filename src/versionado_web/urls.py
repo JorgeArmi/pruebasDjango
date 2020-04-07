@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from Usuarios import views
+from data_jars import views
 from Usuarios.views import category
 
 urlpatterns = [
@@ -28,10 +29,8 @@ urlpatterns = [
     #path('contact/', views.contact, name='contact'),
     path('', views.inicio, name='inicio'), 
     path('info/', views.category, name='info'), 
-    #path('repositorios/', repositorios, name='repositorios'), 
-    #path('uuaas/', uuaas, name='uuaas'), 
-    #path('profile/', profile, name='profile'), 
-    #path('accounts/', include('registration.backends.default.urls')), 
+    #path('data/', data_jars.views.datos, name='data'),
+    #path('data/', data_jars.views.datos_asociados, name='data'),
 ]
 
 if settings.DEBUG:
